@@ -1,92 +1,101 @@
 {
-  "$schema": "./node_modules/ng-packagr/package.schema.json",
-  "name": "ngx-virtual-scroller",
-  "version": "12.0.0",
-  "description": "Angular module for virtual -infinite- list. Supports horizontal/vertical, variable heights, & multi-column",
-  "main": "dist/virtual-scroller.js",
-  "types": "dist/virtual-scroller.d.ts",
-  "sideEffects": true,
-  "scripts": {
-    "cleanup": "rimraf dist",
-    "build": "ng-packagr -p package.json",
-    "build:docs": "rimraf demo/node_modules/ngx-virtual-scroller && cd dist && copyfiles **/* ../demo/node_modules/ngx-virtual-scroller && cd .. && rimraf docs && mkdir docs && cd demo && npm run build && cd dist/demo && copyfiles **/* ../../../docs && cd ../../.. && replace \"<base href=\\\"/\\\">\" \"<base href=\\\"/ngx-virtual-scroller/\\\">\" docs/index.html",
-    "build:all": "npm run build && npm run build:docs",
-    "lint": "tslint src/**/*.ts",
-    "debug-demo": "npm run build:all && cd demo && npm run start",
-    "ngc": "ngc",
-    "update-npm-versions": "npm-check --skip-unused --update-all --save-exact --ignore typescript --ignore @tweenjs/tween.js --ignore @types/tween.js",
-    "prepublishOnly": "PLEASE RUN \"npm run prod-publish\" NOT \"npm publish\"",
-    "prod-publish": "npm run build:all && npm publish ./dist",
-    "publish-test": "npm pack ./dist"
-  },
-  "ngPackage": {
-    "lib": {
-      "entryFile": "src/virtual-scroller.ts",
-      "umdModuleIds": {
-        "@tweenjs/tween.js": "TWEEN"
-      }
+    "$schema": "./node_modules/ng-packagr/package.schema.json",
+    "name": "ngx-virtual-scroller",
+    "version": "12.0.0",
+    "description": "Angular module for virtual -infinite- list. Supports horizontal/vertical, variable heights, & multi-column",
+    "main": "dist/virtual-scroller.js",
+    "types": "dist/virtual-scroller.d.ts",
+    "module": "dist/virtual-scroller/fesm5/virtual-scroller.js",
+    "es2015_ivy_ngcc": "__ivy_ngcc__/fesm2015/virtual-scroller.js",
+    "es2015": "fesm2015/virtual-scroller.js",
+    "esm5": "dist/virtual-scroller/esm5/virtual-scroller.js",
+    "esm2015": "dist/virtual-scroller/esm2015/virtual-scroller.js",
+    "fesm5": "dist/virtual-scroller/fesm5/virtual-scroller.js",
+    "fesm2015_ivy_ngcc": "__ivy_ngcc__/fesm2015/virtual-scroller.js",
+    "fesm2015": "dist/virtual-scroller/fesm2015/virtual-scroller.js",
+    "typings": "dist/virtual-scroller/virtual-scroller.d.ts",
+    "metadata": "dist/virtual-scroller/virtual-scroller.metadata.json",
+    "sideEffects": true,
+    "scripts": {
+        "cleanup": "rimraf dist",
+        "build": "ng-packagr -p package.json",
+        "build:docs": "rimraf demo/node_modules/ngx-virtual-scroller && cd dist && copyfiles **/* ../demo/node_modules/ngx-virtual-scroller && cd .. && rimraf docs && mkdir docs && cd demo && npm run build && cd dist/demo && copyfiles **/* ../../../docs && cd ../../.. && replace \"<base href=\\\"/\\\">\" \"<base href=\\\"/ngx-virtual-scroller/\\\">\" docs/index.html",
+        "build:all": "npm run build && npm run build:docs",
+        "lint": "tslint src/**/*.ts",
+        "debug-demo": "npm run build:all && cd demo && npm run start",
+        "ngc": "ngc",
+        "update-npm-versions": "npm-check --skip-unused --update-all --save-exact --ignore typescript --ignore @tweenjs/tween.js --ignore @types/tween.js",
+        "prepublishOnly": "PLEASE RUN \"npm run prod-publish\" NOT \"npm publish\"",
+        "prod-publish": "npm run build:all && npm publish ./dist",
+        "publish-test": "npm pack ./dist"
     },
-    "whitelistedNonPeerDependencies": [
-      "@tweenjs/tween.js",
-      "@types/tween.js"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rintoj/ngx-virtual-scroller.git"
-  },
-  "keywords": [
-    "virtual scroll",
-    "scroll",
-    "ngx",
-    "angular",
-    "angular 2"
-  ],
-  "contributors": [
-    {
-      "name": "Rinto Jose"
+    "ngPackage": {
+        "lib": {
+            "entryFile": "src/virtual-scroller.ts",
+            "umdModuleIds": {
+                "@tweenjs/tween.js": "TWEEN"
+            }
+        },
+        "whitelistedNonPeerDependencies": [
+            "@tweenjs/tween.js",
+            "@types/tween.js"
+        ]
     },
-    {
-      "name": "Devin Garner"
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/rintoj/ngx-virtual-scroller.git"
     },
-    {
-      "name": "Pavel Kukushkin"
+    "keywords": [
+        "virtual scroll",
+        "scroll",
+        "ngx",
+        "angular",
+        "angular 2"
+    ],
+    "contributors": [{
+            "name": "Rinto Jose"
+        },
+        {
+            "name": "Devin Garner"
+        },
+        {
+            "name": "Pavel Kukushkin"
+        }
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/rintoj/ngx-virtual-scroller/issues"
+    },
+    "homepage": "https://github.com/rintoj/ngx-virtual-scroller#readme",
+    "peerDependencies": {},
+    "dependencies": {
+        "@tweenjs/tween.js": "17.4.0",
+        "@types/tween.js": "17.2.0"
+    },
+    "devDependencies": {
+        "@angular/cli": "12.0.2",
+        "@angular/common": "12.0.3",
+        "@angular/compiler": "12.0.3",
+        "@angular/compiler-cli": "12.0.3",
+        "@angular/core": "12.0.3",
+        "@angular/forms": "12.0.3",
+        "@angular/language-service": "12.0.3",
+        "@angular/platform-browser": "12.0.3",
+        "@angular/platform-browser-dynamic": "12.0.3",
+        "@angular/router": "12.0.3",
+        "@types/node": "13.7.6",
+        "codelyzer": "5.2.1",
+        "copyfiles": "2.2.0",
+        "core-js": "3.6.4",
+        "ng-packagr": "12.0.2",
+        "npm-check": "5.9.0",
+        "replace": "1.1.5",
+        "replace-x": "1.7.2",
+        "rimraf": "3.0.2",
+        "rxjs": "6.5.4",
+        "tslib": "2.2.0",
+        "tslint": "6.0.0",
+        "typescript": "4.2.4",
+        "zone.js": "0.11.4"
     }
-  ],
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/rintoj/ngx-virtual-scroller/issues"
-  },
-  "homepage": "https://github.com/rintoj/ngx-virtual-scroller#readme",
-  "peerDependencies": {},
-  "dependencies": {
-    "@tweenjs/tween.js": "17.4.0",
-    "@types/tween.js": "17.2.0"
-  },
-  "devDependencies": {
-    "@angular/cli": "12.0.2",
-    "@angular/common": "12.0.3",
-    "@angular/compiler": "12.0.3",
-    "@angular/compiler-cli": "12.0.3",
-    "@angular/core": "12.0.3",
-    "@angular/forms": "12.0.3",
-    "@angular/language-service": "12.0.3",
-    "@angular/platform-browser": "12.0.3",
-    "@angular/platform-browser-dynamic": "12.0.3",
-    "@angular/router": "12.0.3",
-    "@types/node": "13.7.6",
-    "codelyzer": "5.2.1",
-    "copyfiles": "2.2.0",
-    "core-js": "3.6.4",
-    "ng-packagr": "12.0.2",
-    "npm-check": "5.9.0",
-    "replace": "1.1.5",
-    "replace-x": "1.7.2",
-    "rimraf": "3.0.2",
-    "rxjs": "6.5.4",
-    "tslib": "2.2.0",
-    "tslint": "6.0.0",
-    "typescript": "4.2.4",
-    "zone.js": "0.11.4"
-  }
 }
